@@ -3,6 +3,7 @@
 
 # Local db
 *.sqlite
+*.db
 
 # Logs
 logs
