@@ -6,3 +6,6 @@ migrate-dev:
 
 prisma-web:
 	npx prisma studio
+
+generator-erd:
+	npx prisma generate
