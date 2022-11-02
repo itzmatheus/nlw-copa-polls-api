@@ -9,3 +9,6 @@ prisma-web:
 
 generator-erd:
 	npx prisma generate
+
+seed-db:
+	npx prisma db seed
