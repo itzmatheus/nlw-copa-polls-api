@@ -76,13 +76,13 @@ export async function pollRoutes(fastify: FastifyInstance) {
 
         if (!poll) {
             reply.status(400).send({
-                message: 'Poll not found.'
+                message: 'Bolão não encontrado.'
             })
         }
 
         if (poll && poll.participants.length > 0) {
             reply.status(400).send({
-                message: 'You already joined this poll.'
+                message: 'Você já entrou nesse bolão.'
             })
         }
 
