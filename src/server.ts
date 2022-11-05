@@ -27,23 +27,23 @@ async function bootstrap() {
         return { count }
     })
 
-    fastify.get('/pools/count', async () => {
-        const count = await prisma.pool.count()
+    fastify.get('/polls/count', async () => {
+        const count = await prisma.poll.count()
         return { count }
     })
 
-    fastify.post('/pools', async (request, reply) => {
+    fastify.post('/polls', async (request, reply) => {
 
-        const createPoolBody = z.object({
+        const createPollBody = z.object({
             title: z.string()
         })
 
-        const { title } = createPoolBody.parse(request.body);
+        const { title } = createPollBody.parse(request.body);
 
         const generate = new ShortUniqueId({ length: 6 })
         const code = new String(generate()).toUpperCase()
 
-        await prisma.pool.create({
+        await prisma.poll.create({
             data: {
                 title,
                 code
