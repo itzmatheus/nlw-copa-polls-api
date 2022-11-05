@@ -9,6 +9,7 @@ async function main() {
             name: 'Jhon Doe',
             email: 'john.doe@gmail.com',
             avatarUrl: 'https://github.com/itzmatheus.png',
+            googleId: '123456789',
         }
     })
 
