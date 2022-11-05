@@ -97,7 +97,7 @@ export async function pollRoutes(fastify: FastifyInstance) {
             })
         }
 
-       poll &&  await prisma.participant.create({
+       poll && await prisma.participant.create({
             data: {
                 pollId: poll.id,
                 userId: request.user.sub,
