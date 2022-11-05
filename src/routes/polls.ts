@@ -2,6 +2,7 @@ import { FastifyInstance } from "fastify"
 import { prisma } from "../lib/prisma"
 import { z } from 'zod';
 import ShortUniqueId from 'short-unique-id';
+import { authenticate } from "../plugins/authenticate";
 
 export async function pollRoutes(fastify: FastifyInstance) {
 
@@ -48,6 +49,62 @@ export async function pollRoutes(fastify: FastifyInstance) {
 
         return reply.status(201).send({ code })
 
+    })
+
+    fastify.post('/polls/:id/join',
+    { onRequest: [authenticate] },
+    async (request, reply) => {
+
+        const joinPollBody = z.object({
+            code: z.string()
+        })
+
+        const { code } = joinPollBody.parse(request.body)
+
+        const poll = await prisma.poll.findUnique({
+            where: {
+                code
+            },
+            include: {
+                participants: {
+                    where: {
+                        userId: request.user.sub,
+                    }
+                }
+            }
+        })
+
+        if (!poll) {
+            reply.status(400).send({
+                message: 'Poll not found.'
+            })
+        }
+
+        if (poll && poll.participants.length > 0) {
+            reply.status(400).send({
+                message: 'You already joined this poll.'
+            })
+        }
+
+        if (poll && !poll.ownerId) {
+            await prisma.poll.update({
+                where: {
+                    id: poll.id,
+                },
+                data: {
+                    ownerId: request.user.sub,
+                }
+            })
+        }
+
+       poll &&  await prisma.participant.create({
+            data: {
+                pollId: poll.id,
+                userId: request.user.sub,
+            }
+        })
+
+        return reply.status(201).send()
     })
 
 }
