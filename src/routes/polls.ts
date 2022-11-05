@@ -51,7 +51,7 @@ export async function pollRoutes(fastify: FastifyInstance) {
 
     })
 
-    fastify.post('/polls/:id/join',
+    fastify.post('/polls/join',
     { onRequest: [authenticate] },
     async (request, reply) => {
 
@@ -110,7 +110,7 @@ export async function pollRoutes(fastify: FastifyInstance) {
     fastify.get('/polls', {
         onRequest: [authenticate],
     },
-    async (request, reply) => {
+    async (request) => {
         const polls = await prisma.poll.findMany({
             where: {
                 participants: {
@@ -148,5 +148,51 @@ export async function pollRoutes(fastify: FastifyInstance) {
 
         return { polls }
     })
+
+    fastify.get('/polls/:id', {
+        onRequest: [authenticate],
+    },
+    async (request) => {
+
+        const getPollParams = z.object({
+            id: z.string(),
+        })
+
+        const { id } = getPollParams.parse(request.params)
+
+        const poll = await prisma.poll.findUnique({
+            where: {
+                id,
+            },
+            include: {
+                owner: {
+                    select: {
+                        id: true,
+                        name: true,
+                    }
+                },
+                participants: {
+                    select: {
+                        id: true,
+
+                        user: {
+                            select: {
+                                avatarUrl: true,
+                            }
+                        }
+                    },
+                    take: 4,
+                },
+                _count: {
+                    select: {
+                        participants: true,
+                    }
+                }
+            }
+        })
+
+        return { poll }
+    })
+
 
 }
