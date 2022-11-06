@@ -61,7 +61,7 @@ export async function authRoutes(fastify: FastifyInstance) {
             email: user.email
         }, {
             sub: user.id,
-            expiresIn: '1h'
+            expiresIn: '10h'
         })
 
         return { token }
