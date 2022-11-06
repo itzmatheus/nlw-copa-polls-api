@@ -95,6 +95,9 @@ $ npm run dev
 ## :bookmark: API Reference
 
 - Consult the file: [NLW-COPA-API.postman_collection.json](NLW-COPA-API.postman_collection.json) and import the requests.
+
+- This API uses [OAUTH2](https://oauth.net/2/). The *_access_token_* used in request to SignIn/SignUp is based on [this doc](https://docs.expo.dev/guides/authentication/#google), so you have to pass google token.
+
 ---
 
 ## :memo: License
