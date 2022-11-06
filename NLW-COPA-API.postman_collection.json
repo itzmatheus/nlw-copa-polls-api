@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "201c74f8-021d-4765-bc6f-3d8f41d5c9a3",
+		"name": "NLW Copa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Polls",
+			"item": [
+				{
+					"name": "Count Polls",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/polls/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"polls",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Poll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF0aGV1cyBMZWl0ZSIsImF2YXRhclVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTFBMDVTcnVkZTh3bFpjbmIzVFk5Z3RWVXVsamVTMkExeVhZRk9wPXM5Ni1jIiwiZW1haWwiOiJtYXRoZXVzamxmbUBnbWFpbC5jb20iLCJzdWIiOiJjbGEzYjF6Z2gwMDAweHZlZ29oNHRxNnRuIiwiaWF0IjoxNjY3NjE2NjkzLCJleHAiOjE2Njc2MjAyOTN9.IHXSpePi2q2VIsUrxNoonGvqn3ELRXhJzzjdEFnbRoo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Bolao do Matheusao\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/polls",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"polls"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Join",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF0aGV1cyBMZWl0ZSIsImF2YXRhclVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTFBMDVTcnVkZTh3bFpjbmIzVFk5Z3RWVXVsamVTMkExeVhZRk9wPXM5Ni1jIiwiZW1haWwiOiJtYXRoZXVzamxmbUBnbWFpbC5jb20iLCJzdWIiOiJjbGEzYjF6Z2gwMDAweHZlZ29oNHRxNnRuIiwiaWF0IjoxNjY3NjE2NjkzLCJleHAiOjE2Njc2MjAyOTN9.IHXSpePi2q2VIsUrxNoonGvqn3ELRXhJzzjdEFnbRoo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"3NCNJM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/polls/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"polls",
+								"join"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List own polls",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF0aGV1cyBMZWl0ZSIsImF2YXRhclVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTFBMDVTcnVkZTh3bFpjbmIzVFk5Z3RWVXVsamVTMkExeVhZRk9wPXM5Ni1jIiwiZW1haWwiOiJtYXRoZXVzamxmbUBnbWFpbC5jb20iLCJzdWIiOiJjbGEzYjF6Z2gwMDAweHZlZ29oNHRxNnRuIiwiaWF0IjoxNjY3NjU1NDE3LCJleHAiOjE2Njc2NTkwMTd9.HjKOVMYrbxWiH3UNNIgW9akl1T1G6LvAipJKKCz-IpA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/polls",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"polls"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get poll details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF0aGV1cyBMZWl0ZSIsImF2YXRhclVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTFBMDVTcnVkZTh3bFpjbmIzVFk5Z3RWVXVsamVTMkExeVhZRk9wPXM5Ni1jIiwiZW1haWwiOiJtYXRoZXVzamxmbUBnbWFpbC5jb20iLCJzdWIiOiJjbGEzYjF6Z2gwMDAweHZlZ29oNHRxNnRuIiwiaWF0IjoxNjY3NjU1NDE3LCJleHAiOjE2Njc2NTkwMTd9.HjKOVMYrbxWiH3UNNIgW9akl1T1G6LvAipJKKCz-IpA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/polls/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"polls",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cla3bwfxp0002xvo55excc9gt"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Count Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/users/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In / Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"access_token\": \"ya29.a0Aa4xrXNdz2A4I6_dyiUCLaZkiIiARA9RbFPNMHdUhlpuifBgmr823zrLrfkd7O5iuRCKuXHnKXyKpeQ1KLgGbREEbmQCFd7tGhF7--7ciGeoAYRacIxTQ-X4T1t1w023ihysHAyEsISmrfAyZAEwoGbJQzZMXgaCgYKAXUSARESFQEjDvL9xoy0qPuEVIw9BOBPG5CFvw0165\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF0aGV1cyBMZWl0ZSIsImF2YXRhclVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTFBMDVTcnVkZTh3bFpjbmIzVFk5Z3RWVXVsamVTMkExeVhZRk9wPXM5Ni1jIiwiZW1haWwiOiJtYXRoZXVzamxmbUBnbWFpbC5jb20iLCJzdWIiOiJjbGEzYjF6Z2gwMDAweHZlZ29oNHRxNnRuIiwiaWF0IjoxNjY3NjE1MjM2LCJleHAiOjE2Njc2MTg4MzZ9.VZXdCNqsKPsCXU6-harQi1dqe_RNcmNXf8lv9-DLBMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Guesses",
+			"item": [
+				{
+					"name": "Count Guesses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/guesses/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"guesses",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create guess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF0aGV1cyBMZWl0ZSIsImF2YXRhclVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTFBMDVTcnVkZTh3bFpjbmIzVFk5Z3RWVXVsamVTMkExeVhZRk9wPXM5Ni1jIiwiZW1haWwiOiJtYXRoZXVzamxmbUBnbWFpbC5jb20iLCJzdWIiOiJjbGEzYjF6Z2gwMDAweHZlZ29oNHRxNnRuIiwiaWF0IjoxNjY3NzYxMTM2LCJleHAiOjE2Njc3OTcxMzZ9.2gNxKsaOXGqFywJQrRs2Wfw5uUhgE9K38V8K9OBaVec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstTeamPoints\": 7,\n    \"secondTeamPoints\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/polls/:pollId/games/:gameId/guesses",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"polls",
+								":pollId",
+								"games",
+								":gameId",
+								"guesses"
+							],
+							"variable": [
+								{
+									"key": "pollId",
+									"value": "cla3a4mni0003xvj074vzgq4n"
+								},
+								{
+									"key": "gameId",
+									"value": "cla3a4mnn0008xvj04gmt9gt2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Games",
+			"item": [
+				{
+					"name": "List games",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF0aGV1cyBMZWl0ZSIsImF2YXRhclVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTFBMDVTcnVkZTh3bFpjbmIzVFk5Z3RWVXVsamVTMkExeVhZRk9wPXM5Ni1jIiwiZW1haWwiOiJtYXRoZXVzamxmbUBnbWFpbC5jb20iLCJzdWIiOiJjbGEzYjF6Z2gwMDAweHZlZ29oNHRxNnRuIiwiaWF0IjoxNjY3NzYxMTM2LCJleHAiOjE2Njc3OTcxMzZ9.2gNxKsaOXGqFywJQrRs2Wfw5uUhgE9K38V8K9OBaVec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/polls/:id/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"polls",
+								":id",
+								"games"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cla3bwfxp0002xvo55excc9gt"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
