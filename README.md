@@ -78,9 +78,9 @@ PS: if you have [make](https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_mak
 
 ```bash
 # Clone this project
-$ git clone https://github.com/itzmatheus/nlw-copa-pools-api
+$ git clone https://github.com/itzmatheus/nlw-copa-polls-api
 # Access
-$ cd nlw-copa-pools-api
+$ cd nlw-copa-polls-api
 # Install dependencies
 $ npm install
 # Create sqlite db local
