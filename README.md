@@ -36,12 +36,6 @@ This project was developed during the event **#NLWtogether** hosted by [Rocketse
 
 ![](prints/web-home.png)
 
-## 🩹 Improvements needed
-
-The project was totally developed according to the instructions given, no aditionals. In the future, it would be interesting to add the following implementations:
-
--   Discord authentication, automatically filling the form field for Discord username.
-
 ## :sparkles: Features
 
 1. Users
